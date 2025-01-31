@@ -5,6 +5,7 @@ namespace OOP_Game_Refactoring
 {
     public class PlayerProperties
     {
+        //To create a player you should declare all the stats
         public PlayerProperties(int _health, int _mana, int _shield, bool _hasFireBuff, bool _hasIceShield) 
         {
             Health = _health;
@@ -17,8 +18,8 @@ namespace OOP_Game_Refactoring
 
         private int Health;
 
-        public List<Card> Deck = new List<Card>();
-        public List<Card> Hand = new List<Card>();
+        public List<Card> Deck = new List<Card>();   //The deck of the player
+        public List<Card> Hand = new List<Card>();  // The hand of the player
 
         public int health 
         {
@@ -75,8 +76,8 @@ namespace OOP_Game_Refactoring
 
         public void DrawCards()
         {
-             
-            while (Hand.Count < 3 && Hand.Count >= 0)
+             // Method for draw cards
+            while (Hand.Count < 3 && Hand.Count >= 0)  //Check if there's no more than 3
             {
                  
                 Hand.Add(Deck[0]);
@@ -84,8 +85,9 @@ namespace OOP_Game_Refactoring
             }
         }
 
-        static void ShuffleDeck(List<Card> deck)
+        private static void ShuffleDeck(List<Card> deck)
         {
+            // Method for shuffling the decks
             int n = deck.Count;
             while (n > 1)
             {

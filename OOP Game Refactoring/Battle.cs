@@ -91,6 +91,7 @@ namespace OOP_Game_Refactoring
                     {
                         PlayCard(cardToPlay, isPlayer);
                         hand.RemoveAt(cardIndex);
+                        //Console.WriteLine($"Enemy used: {cardToPlay.GetCardName() } "); 
                     }
                 }
 
@@ -98,6 +99,7 @@ namespace OOP_Game_Refactoring
 
             void PlayCard(Card cardUsed, bool isPlayer)
             {
+                // Look if it's the player or the enemy who used the card
                 if (isPlayer) 
                 {
                     cardUsed.CardEffect(player, enemy, "Player");
@@ -111,6 +113,7 @@ namespace OOP_Game_Refactoring
 
             void DisplayGameState()
             {
+                //Display all the information for each turn
                 Console.WriteLine($"\nPlayer Health: {player.health} | Mana: {player.mana} | Shield: {player.shield}");
                 Console.WriteLine($"Enemy Health: {enemy.health} | Mana: {enemy.mana} | Shield: {enemy.shield}");
 
@@ -123,6 +126,7 @@ namespace OOP_Game_Refactoring
 
             void UpdateBuffs(bool isPlayer)
             {
+                //Update the buff 
                 if (isPlayer)
                 {
                     if (player.hasFireBuff) player.hasFireBuff = false;

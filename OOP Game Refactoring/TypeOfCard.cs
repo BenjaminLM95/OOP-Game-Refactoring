@@ -3,9 +3,11 @@ using System;
 
 namespace OOP_Game_Refactoring
 {
-    public class FireBallCard : Card
+    public class FireBallCard : Card  // Inheritate from Card because each TypeOfCard is a card. So, each one will receive all the abstract method from card
     {
-
+        // For the effect, the only information that we need is who is the one using the card and who is the affected. And the name to display if 
+        //the one who use it is the player or the enemy. 
+        //PSDT: The player is the enemy's enemy that why when he use it 'enemy' is the player
         public override string GetCardDescription()
         {
             return "Fireball (Costs 30 mana): Deal 40 damage";
