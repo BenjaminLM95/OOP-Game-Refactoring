@@ -24,7 +24,7 @@ namespace OOP_Game_Refactoring
         public int health 
         {
             get { return Health; }
-            set { Health = Math.Max(0, value); }
+            set { Health = Math.Max(0, Math.Min(value, 100)); }
         }
 
 
@@ -33,7 +33,7 @@ namespace OOP_Game_Refactoring
         public int mana 
         {
             get { return Mana;  }
-            set { Mana = Math.Max(0, value); }
+            set { Mana = Math.Max(0, Math.Min(value, 100)); }
         }
 
         private int Shield;
@@ -41,7 +41,7 @@ namespace OOP_Game_Refactoring
         public int shield 
         {
             get { return Shield; }
-            set { Shield = Math.Max(0, value); }
+            set { Shield = Math.Max(0, Math.Min(value, 100)); }
         }
 
         private bool HasFireBuff;
